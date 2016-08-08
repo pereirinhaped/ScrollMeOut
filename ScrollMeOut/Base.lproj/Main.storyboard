@@ -31,13 +31,14 @@
                                     <constraint firstAttribute="height" constant="179" id="MR6-lD-Zxs"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I24-cm-qkK">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I24-cm-qkK">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="Oym-r4-ZRt"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jlc-XN-qt5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="6hd-gY-ix7"/>
                             <constraint firstAttribute="bottom" secondItem="cDh-KX-iWX" secondAttribute="bottom" constant="-7" id="KxQ-9r-a94"/>
@@ -52,12 +53,26 @@
                             <constraint firstItem="cDh-KX-iWX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wt1-B1-XWB"/>
                             <constraint firstItem="I24-cm-qkK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ydP-ZB-RoN"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jWx-Mq-xHh" appends="YES" id="AJH-Ei-Pq1"/>
+                            <outletCollection property="gestureRecognizers" destination="9eT-iX-ixn" appends="YES" id="hYM-VR-iCH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="mainScrollView" destination="I24-cm-qkK" id="3wF-zg-WoL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="9eT-iX-ixn">
+                    <connections>
+                        <action selector="detectSwipe:" destination="BYZ-38-t0r" id="ZAW-XQ-vzb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="jWx-Mq-xHh">
+                    <connections>
+                        <action selector="detectSwipe:" destination="BYZ-38-t0r" id="z2C-NN-FEg"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
